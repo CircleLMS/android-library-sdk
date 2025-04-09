@@ -59,9 +59,9 @@ dependencies {
 ```
 WebViewUtil.startLMS(
     context,
-    "https://qasafetytraining.hercrentals.com/course/catalog?access_token=[accessToken]"
+    "https://qasafetytraining.hercrentals.com/course/catalog/?iframe&access_token=[accessToken]"
 )
 ```
 ## **5. Sample URLs:**  
-Course catalog page: https://qasafetytraining.hercrentals.com/course/catalog/  
-Course detail page: https://qasafetytraining.hercrentals.com/course/catalog/b8ba1023e33a11eab2fb0242ac120002
+Course catalog page: https://qasafetytraining.hercrentals.com/course/catalog/?iframe  
+Course detail page: https://qasafetytraining.hercrentals.com/course/catalog/b8ba1023e33a11eab2fb0242ac120002?iframe
