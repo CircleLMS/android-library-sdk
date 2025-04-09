@@ -65,3 +65,33 @@ WebViewUtil.startLMS(
 ## **5. Sample URLs:**  
 Course catalog page: https://qasafetytraining.hercrentals.com/course/catalog/?iframe  
 Course detail page: https://qasafetytraining.hercrentals.com/course/catalog/b8ba1023e33a11eab2fb0242ac120002?iframe
+
+## **6. Sample Code:**  
+```
+class MainActivity : AppCompatActivity() {
+
+    var url = "https://tangerine-u01.circlelms.vip/course/catalog/"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_main)
+
+        val etUrl = findViewById<AppCompatEditText>(R.id.etUrl)
+        val btLoadPage = findViewById<AppCompatButton>(R.id.btLoadPage)
+
+        etUrl.setText(url)
+
+        btLoadPage.setOnClickListener {
+            url = etUrl.text.toString()
+            if (url.isNotEmpty()){
+                WebViewUtil.startLMS(this, url)
+            }else{
+                Toast.makeText(this, "Url cannot be empty!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+}
+
+```
