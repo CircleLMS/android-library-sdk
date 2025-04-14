@@ -70,7 +70,7 @@ Course detail page (used in email invitation): https://qasafetytraining.hercrent
 ```
 class MainActivity : AppCompatActivity() {
 
-    var url = "https://qasafetytraining.hercrentals.com/course/catalog/"
+    var url = "https://qasafetytraining.hercrentals.com/course/catalog/?iframe&access_token=[accessToken]"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
