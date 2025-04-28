@@ -41,7 +41,7 @@ allprojects {
    In your **app/module-level** `build.gradle`, add the following inside the `dependencies` block:
 ```
 dependencies {
-    implementation 'com.accentrix.webview.library:LmsWebView:1.0.1'
+    implementation 'com.accentrix.webview.library:LmsWebView:1.0.2'
 }
 ```
 
@@ -70,25 +70,28 @@ Course detail page (used in email invitation): https://qasafetytraining.hercrent
 ```
 class MainActivity : AppCompatActivity() {
 
-    var url = "https://qasafetytraining.hercrentals.com/course/catalog/?iframe&access_token=[accessToken]"
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
-        val etUrl = findViewById<AppCompatEditText>(R.id.etUrl)
         val btLoadPage = findViewById<AppCompatButton>(R.id.btLoadPage)
 
-        etUrl.setText(url)
-
         btLoadPage.setOnClickListener {
-            url = etUrl.text.toString()
-            if (url.isNotEmpty()){
-                WebViewUtil.startLMS(this, url)
-            }else{
-                Toast.makeText(this, "Url cannot be empty!", Toast.LENGTH_SHORT).show()
-            }
+            LmsLaunchBuilder()
+                .create(context = this, baseUrl = "https://safetytraining.hercrentals.com")
+                .token(token = "access_token_here")
+                .profile(LmsUserProfile(
+                    accountNumber = "123456",
+                    accountName = "John Doe",
+                    role = "Admin",
+                    driverLicense = "D12345678",
+                    country = "US",
+                    userType = "Credit",
+                    phoneNumber = "+11234567890",
+                    accountStatus = "A",
+                    licenseState = "licenseState"))
+                .launch()
         }
     }
 
