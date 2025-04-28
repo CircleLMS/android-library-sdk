@@ -54,14 +54,6 @@ dependencies {
    import com.accentrix.webview.library.util.WebViewUtil
 ```
 
-## **5. Use the Provided Method to Launch the LMS Page**  
-   Call the method `startLMS()` and pass the required parameters:
-```
-WebViewUtil.startLMS(
-    context,
-    "https://qasafetytraining.hercrentals.com/course/catalog/?iframe&access_token=[accessToken]"
-)
-```
 ## **5. Sample URLs:**  
 Course catalog page: https://qasafetytraining.hercrentals.com/course/catalog/?iframe  
 Course detail page (used in email invitation): https://qasafetytraining.hercrentals.com/course/catalog/b8ba1023e33a11eab2fb0242ac120002?iframe
