@@ -41,7 +41,7 @@ allprojects {
    In your **app/module-level** `build.gradle`, add the following inside the `dependencies` block:
 ```
 dependencies {
-    implementation 'com.accentrix.webview.library:LmsWebView:1.0.5'
+    implementation 'com.accentrix.webview.library:LmsWebView:1.0.6'
 }
 ```
 
